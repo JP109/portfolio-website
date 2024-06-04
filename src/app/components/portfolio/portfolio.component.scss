@@ -1,0 +1,66 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+section {
+    // font-family: 'Trebuchet MS', sans-serif;
+    font-size: 4rem;
+
+    li{
+        font-size: 2rem;
+    }
+
+    height: 100vh;
+    width: 100vw;;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding: 3rem;
+
+    .container{
+        width: 100%;
+    }
+
+    .resume{
+        display: flex;
+        justify-content: center;
+    }
+
+    .timeline{
+        display: flex;
+        justify-content: space-around;
+    }
+
+}
+
+.hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &-content {
+        text-align: center;
+    }
+}
+
+.aaa{
+    width: 30px;
+    height: 30px;
+    background-color: pink;
+}
+
+canvas{
+    width: 100vw;
+    height: 100vh;
+    // background: #000;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}

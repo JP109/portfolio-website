@@ -2,7 +2,12 @@ nav {
     // background-color: #333;
     position: sticky;
     top: 0;
-    max-height: 3rem;
+    min-height: 3rem;
+
+    display: flex;
+    justify-content: flex-end;
+
+    background-color: #000;
     
     // padding: 15px 0;
 
@@ -24,8 +29,8 @@ nav {
 
                 a {
                     text-decoration: none;
-                    // color: #fff;
-                    color: #000;
+                    color: #fff;
+                    // color: #000;
                 }
             }
         }

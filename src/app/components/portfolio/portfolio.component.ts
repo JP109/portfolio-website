@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, HostListener } from '@angular/core';
 import { Particle } from '../particle.model'; // Adjust the import path as necessary
+import { PdfDownloadService } from 'src/app/pdfDownload.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -12,7 +13,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   particleArray: Particle[] = [];
   @ViewChild('myCanvas', { static: true }) canvas!: ElementRef<HTMLCanvasElement>;
 
-  constructor() { 
+  constructor(private pdfDownloadService: PdfDownloadService) { 
     this.mouse = {
       x: null,
       y: null,
@@ -38,7 +39,8 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     const canvasEl = this.canvas.nativeElement;
     canvasEl.width = window.innerWidth;
     canvasEl.height = window.innerHeight;
-    this.mouse.radius = (window.innerHeight / 80) * (window.innerWidth / 80);
+    // this.mouse.radius = (window.innerHeight / 80) * (window.innerWidth / 80);
+    this.mouse.radius = (50) * (50);
     this.initParticles();
   }
 
@@ -53,9 +55,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     const particleCount = 50;
     for (let i = 0; i < particleCount; i++) {
       const size = (Math.random() * 5) + 10;
-      const x = window.innerWidth/5;
-      const y = window.innerHeight;
-      const radius = window.innerWidth/6 + Math.random() * 100; // Adjust the radius for the circular path
+      const y = window.innerWidth/4;
+      const x = window.innerHeight;
+      const radius = window.innerWidth/5 + Math.random() * 100; // Adjust the radius for the circular path
       const color = '#7F5283';
 
       this.particleArray.push(new Particle(x, y, radius, size, color, this.context));
@@ -67,7 +69,19 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     this.context?.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
     for (let particle of this.particleArray) {
-      particle.update();
+      particle.update(this.mouse);
     }
+  }
+
+  downloadResume(){
+    const url = '../../../assets/JaiPawarResume.pdf';
+    this.pdfDownloadService.downloadPdf(url).subscribe(blob => {
+    const a = document.createElement('a');
+    const objectUrl = URL.createObjectURL(blob);
+    a.href = objectUrl;
+    a.download = 'JaiPawarResume.pdf';
+    a.click();
+    URL.revokeObjectURL(objectUrl);
+  });
   }
 }

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, HostListener } from '@angular/core';
-import { Particle } from '../particle.model'; // Adjust the import path as necessary
+import { Particle } from '../particle.model';
 import { PdfDownloadService } from 'src/app/pdfDownload.service';
 
 @Component({
@@ -52,13 +52,16 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
   initParticles() {
     this.particleArray = [];
-    const particleCount = 150;
+    const particleCount = 250;
     for (let i = 0; i < particleCount; i++) {
       const size = (Math.random() * 15);
-      const y = window.innerWidth/4;
-      const x = window.innerHeight;
+      const y = window.innerHeight/2;
+      const x = window.innerWidth/2;
       const radius = window.innerWidth/5 + Math.random() * 100; // Adjust the radius for the circular path
-      const color = '#7F5283';
+      let color = '#40E0D0'
+      if(i%2==0){
+        color = '#7F5283';
+      }
 
       this.particleArray.push(new Particle(x, y, radius, size, color, this.context));
     }

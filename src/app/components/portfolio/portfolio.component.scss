@@ -6,19 +6,47 @@
     // font-family: 'Trebuchet MS', sans-serif;
 }
 
+body {
+    // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    // background-size: 400% 400%;
+    // animation: gradient 15s ease infinite;
+    // height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 section {
     // font-family: 'Trebuchet MS', sans-serif;
     // font-size: 3rem;
     // font-size: 3vw;
 
-    background-color: #000;
+    // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg,#23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+
+    background-color: #0B1215;
     color: #fff;
 
     li{
         font-size: 2rem;
     }
 
-    height: calc(100vh - 3rem);
+    // height: calc(100vh - 3rem);
+    height: 100vh;
     max-width: 100vw;
 
     display: flex;
@@ -69,8 +97,10 @@ canvas{
 }
 
 button {
-    background-color: #000;
-    color: #fff;
+    // background-color: #0B1215;
+    // color: #fff;
+    margin-top: 20px;
+    font-weight: bold;
     border-width: 0;
     cursor: pointer;
     // display: inline-block;
@@ -84,8 +114,9 @@ button {
 button:before {
     animation: opacityFallbackOut .5s step-end forwards;
     backface-visibility: hidden;
-    background-color: #EBEBEB;
+    background-color: #7F5283;
     color: #000;
+    font-weight: bold;
     clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
     content: "";
     height: 100%;
@@ -103,8 +134,9 @@ button:hover:before {
 }
 
 button:after {
-    background-color: #FFFFFF;
+    // background-color: #e3e3e3;
     color: #000;
+    font-weight: bold;
 }
 
 button span {

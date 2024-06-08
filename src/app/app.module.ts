@@ -8,13 +8,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ParticleComponent } from './components/particle/particle.component';
+import { CursorComponent } from './components/cursor/cursor.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
     PortfolioComponent,
-    ParticleComponent
+    ParticleComponent,
+    CursorComponent
   ],
   imports: [
     BrowserModule,

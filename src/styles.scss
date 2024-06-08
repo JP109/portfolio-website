@@ -4,5 +4,10 @@
     margin: 0;
     box-sizing: border-box;
 
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'MontSerrat', 'Trebuchet MS', sans-serif;
+}
+
+@font-face {
+    font-family: MontSerrat;
+    src: url(./assets/fonts/Montserrat-Light.ttf) format("opentype");
 }

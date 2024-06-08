@@ -8,7 +8,8 @@
 
 section {
     // font-family: 'Trebuchet MS', sans-serif;
-    font-size: 3rem;
+    // font-size: 3rem;
+    // font-size: 3vw;
 
     background-color: #000;
     color: #fff;
@@ -74,23 +75,17 @@ button {
     cursor: pointer;
     // display: inline-block;
     font-size: 14px;
-    font-weight: 500;
-    outline: 0;
     padding: 1.5em 2.2em;
     position: relative;
     text-align: center;
     transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    white-space: nowrap;
 }
 
 button:before {
     animation: opacityFallbackOut .5s step-end forwards;
     backface-visibility: hidden;
     background-color: #EBEBEB;
+    color: #000;
     clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
     content: "";
     height: 100%;
@@ -109,9 +104,44 @@ button:hover:before {
 
 button:after {
     background-color: #FFFFFF;
+    color: #000;
 }
 
 button span {
     z-index: 1;
     position: relative;
+}
+
+@media screen and (min-width: 800px) {
+    section {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    section {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section {
+        font-size: 30px;
+        padding: 1rem;
+
+        .hero-content{
+            max-width: unset;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    section {
+        font-size: 20px;
+        padding: 1rem;
+
+        .hero-content {
+            max-width: unset;
+        }
+    }
 }

@@ -52,9 +52,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
   initParticles() {
     this.particleArray = [];
-    const particleCount = 50;
+    const particleCount = 150;
     for (let i = 0; i < particleCount; i++) {
-      const size = (Math.random() * 5) + 10;
+      const size = (Math.random() * 15);
       const y = window.innerWidth/4;
       const x = window.innerHeight;
       const radius = window.innerWidth/5 + Math.random() * 100; // Adjust the radius for the circular path
